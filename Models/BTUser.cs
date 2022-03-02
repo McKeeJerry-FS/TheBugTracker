@@ -13,6 +13,7 @@ namespace TheBugTracker.Models
         [Required] // States that the item is required for adding a new record to the Database
         [Display(Name = "First Name")] // This annotation is for the "View"
         public string FirstName { get; set; }
+        
         [Required]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
