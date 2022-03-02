@@ -29,13 +29,16 @@ namespace TheBugTracker
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
+                // changed .UseSqlServer -> .UseNpgsql
                 options.UseNpgsql(
                     Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDatabaseDeveloperPageExceptionFilter();
-
+            // Changed .AddDefaultIdentity -> .AddIdentity
+            // Added parameters of BTUser and IdentityRole
             services.AddIdentity<BTUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>()
+                // Additional methods added
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
 
