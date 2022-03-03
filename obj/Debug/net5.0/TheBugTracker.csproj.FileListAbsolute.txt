@@ -477,3 +477,8 @@ C:\Users\USER\source\repos\TheBugTracker\TheBugTracker\obj\Debug\net5.0\Razor\Ar
 C:\Users\USER\source\repos\TheBugTracker\TheBugTracker\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Error.cshtml.g.cs
 C:\Users\USER\source\repos\TheBugTracker\TheBugTracker\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\USER\source\repos\TheBugTracker\TheBugTracker\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\Users\USER\source\repos\TheBugTracker\TheBugTracker\obj\Debug\net5.0\Razor\Views\BTCompanies\Create.cshtml.g.cs
+C:\Users\USER\source\repos\TheBugTracker\TheBugTracker\obj\Debug\net5.0\Razor\Views\BTCompanies\Delete.cshtml.g.cs
+C:\Users\USER\source\repos\TheBugTracker\TheBugTracker\obj\Debug\net5.0\Razor\Views\BTCompanies\Details.cshtml.g.cs
+C:\Users\USER\source\repos\TheBugTracker\TheBugTracker\obj\Debug\net5.0\Razor\Views\BTCompanies\Edit.cshtml.g.cs
+C:\Users\USER\source\repos\TheBugTracker\TheBugTracker\obj\Debug\net5.0\Razor\Views\BTCompanies\Index.cshtml.g.cs
