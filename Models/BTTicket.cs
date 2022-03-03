@@ -67,7 +67,7 @@ namespace TheBugTracker.Models
         // ICollection Navigation properties
         public virtual ICollection<BTTicketComment> Comments { get; set; } = new HashSet<BTTicketComment>();
         public virtual ICollection<BTTicketAttachment> Attachments { get; set; } = new HashSet<BTTicketAttachment>();
-        public virtual ICollection<BTNotification> Notifications { get; set; } = new HashSet<BTNotifications>();
+        public virtual ICollection<BTNotification> Notifications { get; set; } = new HashSet<BTNotification>();
         public virtual ICollection<BTTicketHistory> History { get; set; } = new HashSet<BTTicketHistory>();
     }
 }
