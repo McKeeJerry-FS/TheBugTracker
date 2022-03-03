@@ -8,9 +8,10 @@ namespace TheBugTracker.Models
 {
     public class BTProjectPriority
     {
+        //Primary Key
         public int Id { get; set; }
 
-        [DisplayName("Project Priority Name")]
+        [DisplayName("Priority Name")]
         public string Name { get; set; }
     }
 }
