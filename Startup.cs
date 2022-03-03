@@ -47,6 +47,9 @@ namespace TheBugTracker
             // Registering the BTRoleService and IBTRoleService
             services.AddScoped<IBTRolesService, BTRolesService>();
 
+            // Registering th BTCompanyInfoService and IBTCompanyInfoService
+            services.AddScoped<IBTCompanyInfoService, BTCompanyInfoService>();
+
             services.AddControllersWithViews();
         }
 
