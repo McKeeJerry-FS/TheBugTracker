@@ -33,7 +33,7 @@ namespace TheBugTracker.Models
         public string UserId { get; set; }
 
         // Navigation Properties
-        public virtual Ticket Ticket { get; set; }
+        public virtual BTTicket Ticket { get; set; }
         public virtual BTUser User { get; set; }
     }
 }
