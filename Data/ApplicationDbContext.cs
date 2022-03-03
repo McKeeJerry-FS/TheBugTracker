@@ -27,7 +27,11 @@ namespace TheBugTracker.Data
         public DbSet<BTTicketStatus> TicketStatuses { get; set; }
         public DbSet<BTTicketType> TicketTypes { get; set; }
 
+        // In order to see these models added to the Database
+        // use "add-migration "{name of migration}", first.
+        // Then use "update-database"
+        // These commands are don in the Package Manager Console
 
-
+        // These tables can be seen in pgAdmin
     }
 }
