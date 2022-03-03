@@ -13,6 +13,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using TheBugTracker.Data;
 using TheBugTracker.Models;
+using TheBugTracker.Services;
+using TheBugTracker.Services.Interfaces;
 
 namespace TheBugTracker
 {
@@ -41,6 +43,9 @@ namespace TheBugTracker
                 // Additional methods added
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
+
+            // Registering the BTRoleService and IBTRoleService
+            services.AddScoped<IBTRolesService, BTRolesService>();
 
             services.AddControllersWithViews();
         }
