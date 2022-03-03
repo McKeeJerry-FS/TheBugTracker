@@ -59,6 +59,7 @@ namespace TheBugTracker.Models
         public virtual BTCompany Company { get; set; }
         public virtual BTProjectPriority Priority { get; set; }
         
+        // Collection properties
         public virtual ICollection<BTUser> Members { get; set; } = new HashSet<BTUser>();
         public virtual ICollection<BTTicket> Tickets { get; set; } = new HashSet<BTTicket>();
 
