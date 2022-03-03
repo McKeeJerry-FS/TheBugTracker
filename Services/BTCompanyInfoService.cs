@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TheBugTracker.Data;
 using TheBugTracker.Models;
 using TheBugTracker.Services.Interfaces;
 
@@ -9,24 +11,70 @@ namespace TheBugTracker.Services
 {
     public class BTCompanyInfoService : IBTCompanyInfoService
     {
-        public Task<BTUser> GetAllMembersAsync(int companyId)
+        private readonly ApplicationDbContext _context;
+        public BTCompanyInfoService(ApplicationDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public async Task<List<BTUser>> GetAllMembersAsync(int companyId)
+        {
+            List<BTUser> result = new();
+            result = await _context.Users.Where(u => u.CompanyId == companyId).ToListAsync();
+            return result;
         }
 
-        public Task<BTProject> GetAllProjectsAsync(int companyId)
+        public async Task<List<BTProject>> GetAllProjectsAsync(int companyId)
         {
-            throw new NotImplementedException();
+            List<BTProject> result = new();
+            result = await _context.Projects.Where(p => p.CompanyId == companyId)
+                                            .Include(p=>p.Members)
+                                            .Include(p=>p.Tickets)
+                                                .ThenInclude(t=>t.Comments)
+                                            .Include(p => p.Tickets)
+                                                .ThenInclude(t => t.Attachments)
+                                            .Include(p => p.Tickets)
+                                                .ThenInclude(t => t.History)
+                                            .Include(p => p.Tickets)
+                                                .ThenInclude(t => t.Notifications)
+                                            .Include(p => p.Tickets)
+                                                .ThenInclude(t => t.DeveloperUser)
+                                            .Include(p => p.Tickets)
+                                                .ThenInclude(t => t.OwnerUser)
+                                            .Include(p=>p.Tickets)
+                                                .ThenInclude(t=>t.TicketStatus)
+                                            .Include(p=>p.Tickets)
+                                                .ThenInclude(t=>t.TicketPriority)
+                                            .Include(p => p.Tickets)
+                                                .ThenInclude(t => t.TicketType)
+                                            .Include(p=>p.Priority)
+                                            .ToListAsync();
+            return result;
         }
 
-        public Task<BTTicket> GetAllTicketsAsync(int companyId)
+        public async Task<List<BTTicket>> GetAllTicketsAsync(int companyId)
         {
-            throw new NotImplementedException();
+            List<BTTicket> result = new();
+            List<BTProject> projects = new();
+
+            projects = await GetAllProjectsAsync(companyId);
+            result = projects.SelectMany(p => p.Tickets).ToList();
+            return result;
         }
 
-        public Task<BTCompany> GetCompanyInfoByIdAsync(int? companyId)
+        public async Task<BTCompany> GetCompanyInfoByIdAsync(int? companyId)
         {
-            throw new NotImplementedException();
+            BTCompany result = new();
+            if(companyId != null)
+            {
+                result = await _context.Companies
+                    .Include(c=>c.Members)
+                    .Include(c=>c.Projects)
+                    .Include(c=>c.Invites)
+                    .FirstOrDefaultAsync(c => c.Id == companyId);
+                return result;
+
+            }
+            return result;
         }
     }
 }

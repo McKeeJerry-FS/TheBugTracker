@@ -16,7 +16,7 @@ namespace TheBugTracker.Models
 
 
         [DisplayName("Company")]
-        public string? CompanyId { get; set; } //Foreign Key
+        public int? CompanyId { get; set; } //Foreign Key
 
         [Required]
         [StringLength(50)]
