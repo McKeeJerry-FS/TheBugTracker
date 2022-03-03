@@ -8,6 +8,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
+// NOTE: Do Not Scaffold!!
+
 namespace TheBugTracker.Models
 {
     public class BTUser : IdentityUser

@@ -1,5 +1,7 @@
 using System;
 
+// NOTE: Do Not Scaffold!
+
 namespace TheBugTracker.Models
 {
     public class ErrorViewModel
