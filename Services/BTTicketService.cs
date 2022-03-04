@@ -10,11 +10,10 @@ namespace TheBugTracker.Services
 {
     public class BTTicketService : IBTTicketService
     {
+        //Dependency Injection
         private readonly ApplicationDbContext _context;
         private readonly IBTRolesService _rolesService;
         private readonly IBTProjectService _projectService;
-
-        //Dependency Injection
 
         //Constructor
         public BTTicketService(ApplicationDbContext context, IBTRolesService rolesService, IBTProjectService projectService)
@@ -30,17 +29,33 @@ namespace TheBugTracker.Services
             throw new NotImplementedException();
         }
 
+        //CRUD - READ
+        public Task<BTTicket> GetTicketByIdAsync(int ticketId)
+        {
+            throw new NotImplementedException();
+        }
+
+        //CRUD - UPDATE
+        public Task UpdateTicketAsync(BTTicket ticket)
+        {
+            throw new NotImplementedException();
+        }
+
         //CRUD - DELETE
         public Task ArchiveTicketAsync(BTTicket ticket)
         {
             throw new NotImplementedException();
         }
 
+        
+        
         public Task AssignTicketAsync(int ticketId, string userId)
         {
             throw new NotImplementedException();
         }
 
+        
+        // "GET" Methods
         public Task<List<BTTicket>> GetAllTicketsByCompanyAsync(int companyId)
         {
             throw new NotImplementedException();
@@ -86,12 +101,6 @@ namespace TheBugTracker.Services
             throw new NotImplementedException();
         }
 
-        //CRUD - READ
-        public Task<BTTicket> GetTicketByIdAsync(int ticketId)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<BTUser> GetTicketDeveloperAsync(int ticketId)
         {
             throw new NotImplementedException();
@@ -107,6 +116,8 @@ namespace TheBugTracker.Services
             throw new NotImplementedException();
         }
 
+
+        // "LOOKUP" Methods
         public Task<int?> LookupTicketPriorityIdAsync(string priorityName)
         {
             throw new NotImplementedException();
@@ -122,10 +133,6 @@ namespace TheBugTracker.Services
             throw new NotImplementedException();
         }
 
-        //CRUD - UPDATE
-        public Task UpdateTicketAsync(BTTicket ticket)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
