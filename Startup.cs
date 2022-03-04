@@ -50,6 +50,9 @@ namespace TheBugTracker
             // Registering th BTCompanyInfoService and IBTCompanyInfoService
             services.AddScoped<IBTCompanyInfoService, BTCompanyInfoService>();
 
+            // Registering the BTProjectService and IBTProjectService
+            services.AddScoped<IBTProjectService, BTProjectService>();
+
             services.AddControllersWithViews();
         }
 
