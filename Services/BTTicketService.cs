@@ -24,6 +24,7 @@ namespace TheBugTracker.Services
             _projectService = projectService;
         }
 
+        //CRUD Methods - COMPLETED!
         //CRUD - CREATE
         public async Task AddNewTicketAsync(BTTicket ticket)
         {
@@ -123,19 +124,46 @@ namespace TheBugTracker.Services
 
 
         // "LOOKUP" Methods
-        public Task<int?> LookupTicketPriorityIdAsync(string priorityName)
+        public async Task<int?> LookupTicketPriorityIdAsync(string priorityName)
         {
-            throw new NotImplementedException();
+            try
+            {
+                BTTicketPriority priority = await _context.TicketPriorities.FirstOrDefaultAsync(p => p.Name == priorityName);
+                return priority?.Id;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        public Task<int?> LookupTicketStatusIdAsync(string statusName)
+        public async Task<int?> LookupTicketStatusIdAsync(string statusName)
         {
-            throw new NotImplementedException();
+            try
+            {
+                BTTicketStatus status = await _context.TicketStatuses.FirstOrDefaultAsync(p => p.Name == statusName);
+                return status?.Id;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        public Task<int?> LookupTicketTypeIdAsync(string typeName)
+        public async Task<int?> LookupTicketTypeIdAsync(string typeName)
         {
-            throw new NotImplementedException();
+            try
+            {
+                BTTicketType type = await _context.TicketTypes.FirstOrDefaultAsync(p => p.Name == typeName);
+                return type?.Id;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         
