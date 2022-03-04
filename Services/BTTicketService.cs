@@ -113,7 +113,7 @@ namespace TheBugTracker.Services
         }
 
         
-        // "GET" Methods
+        // "GET" Methods - COMPLETED!
 
         public async Task<List<BTTicket>> GetAllTicketsByCompanyAsync(int companyId)
         {
@@ -247,7 +247,7 @@ namespace TheBugTracker.Services
         }
 
 
-        //"GET" Project Ticket Methods
+        //"GET" Project Ticket Methods - COMPLETED!
         public async Task<List<BTTicket>> GetProjectTicketsByPriorityAsync(string priorityName, int companyId, int projectId)
         {
             List<BTTicket> tickets = new();
@@ -405,7 +405,7 @@ namespace TheBugTracker.Services
         }
 
 
-        // "LOOKUP" Methods
+        // "LOOKUP" Methods - COMPLETED!!
         public async Task<int?> LookupTicketPriorityIdAsync(string priorityName)
         {
             try
