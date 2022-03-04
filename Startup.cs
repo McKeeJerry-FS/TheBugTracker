@@ -60,6 +60,9 @@ namespace TheBugTracker
             // Registering the BTTicketHistoryService and IBTTicketHistoryService
             services.AddScoped<IBTTicketHistoryService, BTTicketHistoryService>();
 
+            // Registering the BTNotificationService and IBTNotificationService
+            services.AddScoped<IBTNotificationService, BTNotificationService>();
+
             // Registering the BTEmailService and IEmailSender
             services.AddScoped<IEmailSender, BTEmailService>();
             services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
