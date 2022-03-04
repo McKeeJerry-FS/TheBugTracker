@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TheBugTracker.Services.Interfaces
 {
-    interface IBTInviteService
+    public interface IBTInviteService
     {
     }
 }
