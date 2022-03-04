@@ -44,10 +44,19 @@ namespace TheBugTracker.Services
             }
         }
 
-        //CRUD - READ
+        //CRUD - READ*
         public async Task<BTTicket> GetTicketByIdAsync(int ticketId)
         {
-            return await _context.Tickets.FirstOrDefaultAsync(t => t.Id == ticketId);
+            try
+            {
+                return await _context.Tickets.FirstOrDefaultAsync(t => t.Id == ticketId);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         //CRUD - UPDATE*
