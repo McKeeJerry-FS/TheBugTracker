@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,27 +25,31 @@ namespace TheBugTracker.Services
         }
 
         //CRUD - CREATE
-        public Task AddNewTicketAsync(BTTicket ticket)
+        public async Task AddNewTicketAsync(BTTicket ticket)
         {
-            throw new NotImplementedException();
+            _context.Add(ticket);
+            await _context.SaveChangesAsync();
         }
 
         //CRUD - READ
-        public Task<BTTicket> GetTicketByIdAsync(int ticketId)
+        public async Task<BTTicket> GetTicketByIdAsync(int ticketId)
         {
-            throw new NotImplementedException();
+            return await _context.Tickets.FirstOrDefaultAsync(t => t.Id == ticketId);
         }
 
         //CRUD - UPDATE
-        public Task UpdateTicketAsync(BTTicket ticket)
+        public async  Task UpdateTicketAsync(BTTicket ticket)
         {
-            throw new NotImplementedException();
+            _context.Update(ticket);
+            await _context.SaveChangesAsync();
         }
 
         //CRUD - DELETE
-        public Task ArchiveTicketAsync(BTTicket ticket)
+        public async Task ArchiveTicketAsync(BTTicket ticket)
         {
-            throw new NotImplementedException();
+            ticket.Archived = true;
+            _context.Remove(ticket);
+            await _context.SaveChangesAsync();
         }
 
         
