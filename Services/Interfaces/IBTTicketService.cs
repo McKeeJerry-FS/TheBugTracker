@@ -22,7 +22,7 @@ namespace TheBugTracker.Services.Interfaces
         public Task<List<BTTicket>> GetAllTicketsByPriorityAsync(int companyId, string priorityName);
         public Task<List<BTTicket>> GetAllTicketsByStatusAsync(int companyId, string statusName);
         public Task<List<BTTicket>> GetAllTicketsByTypeAsync(int companyId, string typeName);
-        public Task<BTUser> GetTicketDeveloperAsync(int ticketId);
+        public Task<BTUser> GetTicketDeveloperAsync(int ticketId, int companyId); // **** UPDATED **** added "int companyId" 
         public Task<List<BTTicket>> GetTicketsByRoleAsync(string role, string userId, int companyId);
         public Task<List<BTTicket>> GetTicketsByUserIdAsync(string userId, int companyId);
         public Task<List<BTTicket>> GetProjectTicketsByRoleAsync(string role, string userId, int projectId, int companyId);
