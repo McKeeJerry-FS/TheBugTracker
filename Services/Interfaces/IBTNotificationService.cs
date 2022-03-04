@@ -13,7 +13,7 @@ namespace TheBugTracker.Services.Interfaces
         public Task<List<BTNotification>> GetSentNotificationsAsync(string userId);
         public Task SendEmailNotificationsByRoleAsync(BTNotification notification, int companyId, string role);
         public Task SendMembersEmailNotificationAsync(BTNotification notification, List<BTUser> members);
-        public Task SendEmailNotificationAsync(BTNotification notification, string emailSbject);
+        public Task SendEmailNotificationAsync(BTNotification notification, string emailSubject);
 
     }
 }
