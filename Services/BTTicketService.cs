@@ -28,11 +28,20 @@ namespace TheBugTracker.Services
         }
 
         //CRUD Methods - COMPLETED!
-        //CRUD - CREATE
+        //CRUD - CREATE*
         public async Task AddNewTicketAsync(BTTicket ticket)
         {
-            _context.Add(ticket);
-            await _context.SaveChangesAsync();
+            
+            try
+            {
+                _context.Add(ticket);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         //CRUD - READ
@@ -41,19 +50,35 @@ namespace TheBugTracker.Services
             return await _context.Tickets.FirstOrDefaultAsync(t => t.Id == ticketId);
         }
 
-        //CRUD - UPDATE
+        //CRUD - UPDATE*
         public async  Task UpdateTicketAsync(BTTicket ticket)
         {
-            _context.Update(ticket);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Update(ticket);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        //CRUD - DELETE
+        //CRUD - DELETE*
         public async Task ArchiveTicketAsync(BTTicket ticket)
         {
-            ticket.Archived = true;
-            _context.Remove(ticket);
-            await _context.SaveChangesAsync();
+            try
+            {
+                ticket.Archived = true;
+                _context.Remove(ticket);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         
