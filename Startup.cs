@@ -56,6 +56,9 @@ namespace TheBugTracker
             // Registering the BTTicketService and IBTTicketService
             services.AddScoped<IBTTicketService, BTTicketService>();
 
+            // Registering the BTTicketHistoryService and IBTTicketHistoryService
+            services.AddScoped<IBTTicketHistoryService, BTTicketHistoryService>();
+
             services.AddControllersWithViews();
         }
 
