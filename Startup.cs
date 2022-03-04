@@ -62,6 +62,7 @@ namespace TheBugTracker
 
             // Registering the BTEmailService and IEmailSender
             services.AddScoped<IEmailSender, BTEmailService>();
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
 
             services.AddControllersWithViews();
         }
