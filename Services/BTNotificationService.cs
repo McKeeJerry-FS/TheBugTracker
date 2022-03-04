@@ -136,7 +136,7 @@ namespace TheBugTracker.Services
                 foreach (BTUser bTUser in members)
                 {
                     notification.RecipientId = bTUser.Id;
-                    await SendEmailNotificationAsync(notification, notification.Title)
+                    await SendEmailNotificationAsync(notification, notification.Title);
                 }
             }
             catch (Exception)
