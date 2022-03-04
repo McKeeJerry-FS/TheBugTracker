@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TheBugTracker.Data;
 using TheBugTracker.Models;
 using TheBugTracker.Services.Interfaces;
 
@@ -9,6 +10,20 @@ namespace TheBugTracker.Services
 {
     public class BTTicketService : IBTTicketService
     {
+        private readonly ApplicationDbContext _context;
+        private readonly IBTRolesService _rolesService;
+        private readonly IBTProjectService _projectService;
+
+        //Dependency Injection
+
+        //Constructor
+        public BTTicketService(ApplicationDbContext context, IBTRolesService rolesService, IBTProjectService projectService)
+        {
+            _context = context;
+            _rolesService = rolesService;
+            _projectService = projectService;
+        }
+
         //CRUD - CREATE
         public Task AddNewTicketAsync(BTTicket ticket)
         {
