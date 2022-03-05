@@ -539,4 +539,3 @@ C:\Users\USER\source\repos\TheBugTracker\TheBugTracker\obj\Debug\net5.0\Razor\Vi
 C:\Users\USER\source\repos\TheBugTracker\TheBugTracker\bin\Debug\net5.0\MailKit.dll
 C:\Users\USER\source\repos\TheBugTracker\TheBugTracker\bin\Debug\net5.0\MimeKit.dll
 C:\Users\USER\source\repos\TheBugTracker\TheBugTracker\bin\Debug\net5.0\BouncyCastle.Crypto.dll
-C:\Users\USER\source\repos\TheBugTracker\TheBugTracker\obj\Debug\net5.0\TheBugTracker.csproj.AssemblyReference.cache
